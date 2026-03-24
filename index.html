@@ -876,6 +876,84 @@ body {
   font-weight: 400;
 }
 
+/* ── PREFERRED CARD ── */
+.what-card-preferred {
+  border-color: var(--gold);
+  border-width: 2px;
+}
+
+.preferred-badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--gold);
+  padding: 3px 10px;
+  margin-bottom: 12px;
+}
+
+/* ── SUPPORT SECTION ── */
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+
+.support-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--ink);
+  padding: 24px 22px;
+  transition: border-top-color 0.15s;
+}
+
+.support-card:hover { border-top-color: var(--gold); }
+
+.support-head {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+  letter-spacing: 0.01em;
+}
+
+.support-card p {
+  font-size: 13px;
+  color: var(--ink-mid);
+  line-height: 1.65;
+}
+
+.impact-quote {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-style: italic;
+  color: var(--ink);
+  border-left: 3px solid var(--gold);
+  padding: 16px 20px;
+  margin-top: 24px;
+  background: var(--white);
+  line-height: 1.6;
+}
+
+.impact-quote span {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-style: normal;
+  color: var(--gold-deep);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .support-grid { grid-template-columns: 1fr; }
+}
+
 /* ── CONSTRAINT BOX ── */
 .constraint-box {
   max-width: 680px;
@@ -949,7 +1027,7 @@ body {
     <h1>Take your class<br><em>abroad.</em></h1>
     <p class="hero-sub">Student group mobility — what it is, what it costs, and what it gives back.</p>
     <p class="hero-desc">Erasmus+ funds schools to send students on structured international exchanges. As a teacher, you travel <em>because your students travel</em> — you design the programme, lead the group, and bring it home. The grant covers most of the cost.</p>
-    <a href="#what" class="hero-cta">
+    <a href="#support" class="hero-cta">
       Find out how
       <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 3l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
@@ -957,10 +1035,10 @@ body {
   <div class="hero-right">
     <div class="hero-right-inner">
       <div class="hero-tile">
-        <div class="hero-tile-num">5</div>
+        <div class="hero-tile-num"></div>
         <div class="hero-tile-label">Grant covers</div>
-        <div class="hero-tile-value">Travel + stay</div>
-        <div class="hero-tile-desc">Flights, accommodation, and a daily subsistence allowance — all funded through the school's Erasmus accreditation.</div>
+        <div class="hero-tile-value">100% core costs</div>
+        <div class="hero-tile-desc">Travel, accommodation, and daily subsistence — all funded. You are not out of pocket.</div>
       </div>
       <div class="hero-tile">
         <div class="hero-tile-num">2</div>
@@ -972,12 +1050,48 @@ body {
   </div>
 </section>
 
+<!-- ── SUPPORT SECTION ── -->
+<section class="section support-section" id="support">
+  <div class="section-inner">
+    <div class="section-label">What support you actually get</div>
+    <h2 class="section-heading">You are not doing this <em>alone.</em></h2>
+    <p class="section-intro" style="margin-bottom:36px;">The most common reason teachers hesitate is not the educational programme — it is the fear of what happens when something goes wrong. Here is what is in place.</p>
+
+    <div class="support-grid">
+      <div class="support-card">
+        <div class="support-head">Administrative cover</div>
+        <p>All logistics — travel, accommodation, grant documentation, parental consent collection — are handled by the coordinators and administration. You do not manage paperwork alone.</p>
+      </div>
+      <div class="support-card">
+        <div class="support-head">Legal responsibility clarity</div>
+        <p>The school carries institutional liability for Erasmus+ mobilities. The Participant Agreements and Learning Agreement define responsibilities clearly before departure. You are covered by the school's insurance framework throughout.</p>
+      </div>
+      <div class="support-card">
+        <div class="support-head">If something goes wrong</div>
+        <p>The Erasmus coordination team and school management are your first point of contact for any incident — medical, logistical, or behavioural. You are not expected to resolve problems unilaterally. Escalation protocols are in place.</p>
+      </div>
+      <div class="support-card">
+        <div class="support-head">Cover lessons</div>
+        <p>Timetable cover for your absence is arranged by school management as part of the mobility planning process — not left to you to negotiate individually.</p>
+      </div>
+      <div class="support-card">
+        <div class="support-head">Parental concerns</div>
+        <p>The coordinators handle parental queries about the programme, costs, and consent. The consent form covers medical, conduct, and media questions systematically so individual conversations are rare.</p>
+      </div>
+      <div class="support-card">
+        <div class="support-head">After you return</div>
+        <p>Post-mobility reporting is supported by the coordination team. Your main obligation is one dissemination contribution — a short staff presentation, a newsletter paragraph, or a lesson drawing on the experience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── WHAT IS IT ── -->
 <section class="section" id="what">
   <div class="section-inner">
     <div class="section-label">What is student group mobility?</div>
     <h2 class="section-heading">Your students travel.<br>You lead. <em>Erasmus pays.</em></h2>
-    <p class="section-intro">Student group mobilities are structured visits where a DSP class travels to a partner school abroad — or hosts one here. You plan the educational programme, the grant covers the logistics.</p>
+    <p class="section-intro">Student group mobilities are structured visits where a DSP class travels to a partner school abroad — or hosts one here. DSP's preferred model is the reciprocal exchange: both groups travel, both grants fund the trip. You plan the educational programme; the grant covers the logistics.</p>
 
     <div class="goals-row">
       <div class="goals-row-label">DSP strategic goals this supports</div>
@@ -990,6 +1104,13 @@ body {
     </div>
 
     <div class="what-grid">
+      <div class="what-card what-card-preferred">
+        <div class="what-card-accent"></div>
+        <div class="preferred-badge">DSP preferred model</div>
+        <h3>Reciprocal exchange</h3>
+        <p>Your group visits a partner school; their group visits DSP. Both legs are grant-funded. Students are expected to host an incoming guest and travel in return — this reciprocity is central to how the model works. Where hosting genuinely isn't possible for a particular student, the coordinators discuss alternatives on a case-by-case basis.</p>
+        <div class="what-card-tag">two-way · grant covers both legs · repeatable</div>
+      </div>
       <div class="what-card">
         <div class="what-card-accent"></div>
         <h3>Short-term learner mobility</h3>
@@ -1003,12 +1124,7 @@ body {
         <p>A physical mobility combined with virtual collaboration before and after. Often the most pedagogically rich format — students meet online, travel together, and continue working across borders.</p>
         <div class="what-card-tag">hybrid format · growing fast</div>
       </div>
-      <div class="what-card">
-        <div class="what-card-accent"></div>
-        <h3>Reciprocal exchange</h3>
-        <p>Your group visits a partner school; their group visits DSP. Neither depends on host family placements — accommodation is covered by the grant. Hosting a guest can be offered but must never be a condition of participation.</p>
-        <div class="what-card-tag">two-way · grant covers both legs</div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -1018,7 +1134,7 @@ body {
   <div class="section-inner">
     <div class="section-label">How it works</div>
     <h2 class="section-heading" style="color:white;">From idea to departure<br>in five steps.</h2>
-    <p class="section-intro">The coordination team handles the grant administration. Your job is the educational programme.</p>
+    <p class="section-intro">The coordination team handles the grant administration. Your job is the educational programme — the coordination team handles everything else.</p>
 
     <div class="journey" style="margin-top: 40px;">
       <div class="journey-step">
@@ -1073,7 +1189,7 @@ body {
           <div class="benefit-icon">📚</div>
           <div class="benefit-text">
             <h4>Curriculum you design</h4>
-            <p>The educational programme is yours. Language, humanities, science, arts — mobility is a format, not a subject.</p>
+            <p>The educational programme is yours — designed with the support of the coordination team. Language, humanities, science, arts — mobility is a format, not a subject.</p>
           </div>
         </li>
         <li class="benefit-item">
@@ -1100,10 +1216,7 @@ body {
       </ul>
 
       <div>
-        <div class="pull-quote">
-          <blockquote>"One of the students ended up sitting in front of a sculpture for ages, just looking — soaking it in. When we talked about what had held her there, it was genuinely illuminating. You just don't get moments like that in a normal lesson."</blockquote>
-          <div class="pull-quote-attr">Justin Steinmetz · Erasmus+ group mobility · Helsinki</div>
-        </div>
+
 
         <div class="numbers-row">
           <div class="number-card">
@@ -1132,11 +1245,11 @@ body {
 
     <div class="impact-row impact-row-full">
       <div class="impact-text impact-text-full">
-        <p>Group mobilities produce outcomes that school-based teaching cannot replicate. Students navigate unfamiliar environments, communicate in a foreign language under real conditions, and build relationships across cultural difference — not as a simulation, but as a lived experience.</p>
-        <p><strong>Language acquisition accelerates.</strong> Even students who resist practising in class tend to engage fluently when the context demands it. The social pressure of genuine communication does what classroom drills cannot.</p>
-        <p><strong>Social dynamics shift in ways that persist.</strong> Students who rarely interact at school often connect deeply during a mobility — sometimes forming the strongest friendships of their school years. Teachers consistently identify this as one of the most significant outcomes, academic or otherwise.</p>
-        <p><strong>Motivation carries over.</strong> Students return with a reason to engage — a partner school contact, a project to continue, a language that now means something to them personally. That is difficult to manufacture in a classroom and nearly impossible to sustain without the experience behind it.</p>
-        <p><strong>And occasionally something unexpected happens.</strong> A student sits in front of a sculpture for a long time, just looking. A student who barely speaks in class holds a conversation with a stranger in a foreign language. A student who you thought you knew surprises you completely. These moments do not happen on their own. That is what a mobility makes possible. It is worth going.</p>
+        <p><strong>Language acquisition accelerates.</strong> Students who resist practising in class tend to engage fluently when the context demands it.</p>
+        <p><strong>Social dynamics shift.</strong> Students who rarely interact at school often connect most deeply during a mobility. Teachers consistently identify this as one of the most significant outcomes.</p>
+        <p><strong>Motivation carries over.</strong> Students return with a reason to engage — a contact, a project, a language that now means something personally.</p>
+        <p>These outcomes are difficult to manufacture in a classroom. They tend to arrive unexpectedly — a student sitting in front of a sculpture for a long time, just looking; a student who barely speaks in class holding a conversation in a foreign language. One of Justin Steinmetz's students did exactly that in Helsinki.</p>
+        <blockquote class="impact-quote">"One of the students ended up sitting in front of a sculpture for ages, just looking — soaking it in. When we talked about what had held her there, it was genuinely illuminating. You just don't get moments like that in a normal lesson." <span>— Justin Steinmetz, Erasmus+ group mobility, Helsinki</span></blockquote>
       </div>
     </div>
   </div>
@@ -1216,7 +1329,7 @@ body {
           Do students have to host a foreign student in return?
           <span class="faq-arrow">⌄</span>
         </button>
-        <div class="faq-a">No. Hosting a student from the partner school is a nice option and many students enjoy it, but it is never a condition of participation. Accommodation for the incoming group is covered by the grant. A student who doesn't want to host can still travel.</div>
+        <div class="faq-a">In DSP's reciprocal exchange model, students are expected to host an incoming guest and travel in return. This reciprocity is what makes the model work — both groups benefit, both groups contribute. Accommodation costs are grant-funded, so hosting is not a financial burden. If a student genuinely cannot host for reasons outside their control, the coordinators will discuss alternatives individually. A blanket opt-out from hosting while still travelling is not the norm.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
@@ -1248,7 +1361,7 @@ body {
   <div class="section-inner">
     <div class="constraint-box">
       <div class="constraint-label">How participation works</div>
-      <p>DSP runs a small number of group mobilities each year, selected in coordination with school leadership and department heads. The Erasmus team works to ensure that participation is equitable, workload is manageable, and each mobility is properly supported from planning through to archive. If you have an idea, the first step is a conversation — not a commitment.</p>
+      <p>DSP runs a small number of group mobilities each year, selected in coordination with school leadership and department heads. Participation rotation is monitored to ensure the same teachers are not repeatedly burdened or excluded. The Erasmus team works to ensure workload is manageable and each mobility is properly supported from planning through to archive. If you have an idea, the first step is a conversation — not a commitment.</p>
     </div>
   </div>
 </section>
