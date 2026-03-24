@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Take Your Class Abroad — Erasmus+ Student Mobility</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0f0e0c;
+  --ink-mid: #3d3b36;
+  --ink-light: #7a7870;
+  --ink-faint: #c8c6be;
+  --paper: #f7f5ef;
+  --paper-warm: #eeebe0;
+  --white: #ffffff;
+  --gold: #c09a3a;
+  --gold-pale: #f5edd8;
+  --gold-deep: #8a6e20;
+  --blue: #1e3a5f;
+  --blue-mid: #2d5a9e;
+  --blue-pale: #e8eef8;
+  --green: #1a5c3a;
+  --green-pale: #e8f2ec;
+  --rule: rgba(15,14,12,0.1);
+
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'DM Sans', sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: var(--ink);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left {
+  padding: 80px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(40px, 4.5vw, 64px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-sub {
+  font-family: var(--serif);
+  font-size: clamp(18px, 1.8vw, 24px);
+  font-style: italic;
+  color: rgba(255,255,255,0.55);
+  font-weight: 400;
+  margin-bottom: 48px;
+  line-height: 1.4;
+}
+
+.hero-desc {
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  max-width: 420px;
+  margin-bottom: 48px;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: var(--gold);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.hero-cta:hover { background: #d4ae4e; }
+.hero-cta svg { width: 14px; height: 14px; }
+
+.hero-right {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-right-inner {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 3px;
+  padding: 3px;
+}
+
+.hero-tile {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.2s;
+}
+
+.hero-tile:hover { background: rgba(255,255,255,0.07); }
+
+.hero-tile-num {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-family: var(--serif);
+  font-size: 80px;
+  font-style: italic;
+  color: rgba(255,255,255,0.04);
+  line-height: 1;
+  user-select: none;
+}
+
+.hero-tile-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.hero-tile-value {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.hero-tile-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.5;
+}
+
+/* Ghost text */
+.hero-ghost {
+  position: absolute;
+  bottom: -60px;
+  left: -20px;
+  font-family: var(--serif);
+  font-size: 280px;
+  font-style: italic;
+  font-weight: 700;
+  color: rgba(255,255,255,0.015);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+/* ── SECTION WRAPPER ── */
+.section {
+  padding: 96px 0;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 56px;
+}
+
+.section-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.section-heading {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.section-heading em { font-style: italic; color: var(--blue-mid); }
+
+.section-intro {
+  font-size: 16px;
+  color: var(--ink-mid);
+  max-width: 600px;
+  line-height: 1.7;
+  margin-bottom: 56px;
+}
+
+/* ── WHAT IS IT ── */
+.what-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+
+.what-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 36px;
+  position: relative;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.what-card:hover {
+  border-color: rgba(15,14,12,0.25);
+  box-shadow: 0 4px 24px rgba(15,14,12,0.06);
+}
+
+.what-card-accent {
+  width: 32px;
+  height: 3px;
+  background: var(--gold);
+  margin-bottom: 20px;
+}
+
+.what-card h3 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.what-card p {
+  font-size: 14px;
+  color: var(--ink-mid);
+  line-height: 1.65;
+}
+
+.what-card-tag {
+  margin-top: 20px;
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue-mid);
+  background: var(--blue-pale);
+  padding: 4px 10px;
+}
+
+/* ── JOURNEY ── */
+.section-dark {
+  background: var(--ink);
+  padding: 96px 0;
+}
+
+.section-dark .section-heading { color: var(--white); }
+.section-dark .section-intro { color: rgba(255,255,255,0.55); }
+.section-dark .section-label { color: var(--gold); }
+.section-dark .section-label::before { background: var(--gold); }
+
+.journey {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  margin-top: 0;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.journey-step {
+  padding: 32px 24px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+}
+
+.journey-step:last-child { border-right: none; }
+
+.journey-n {
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  margin-bottom: 16px;
+}
+
+.journey-step h4 {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.journey-step p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+}
+
+.journey-connector {
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  z-index: 2;
+}
+
+/* ── FOR YOU ── */
+.benefits-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.benefit-list { list-style: none; }
+
+.benefit-item {
+  display: flex;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.benefit-item:last-child { border-bottom: none; }
+
+.benefit-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--gold-pale);
+  border: 1px solid rgba(192,154,58,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.benefit-text h4 {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+
+.benefit-text p {
+  font-size: 13px;
+  color: var(--ink-light);
+  line-height: 1.55;
+}
+
+.pull-quote {
+  background: var(--ink);
+  padding: 48px;
+  position: relative;
+}
+
+.pull-quote::before {
+  content: '\201C';
+  position: absolute;
+  top: 20px;
+  left: 36px;
+  font-family: var(--serif);
+  font-size: 120px;
+  color: rgba(255,255,255,0.06);
+  line-height: 1;
+}
+
+.pull-quote blockquote {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.5;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.pull-quote-attr {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.numbers-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  margin-top: 48px;
+}
+
+.number-card {
+  background: var(--gold-pale);
+  border: 1px solid rgba(192,154,58,0.2);
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.number-card .n {
+  font-family: var(--serif);
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--gold-deep);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.number-card .label {
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mid);
+}
+
+/* ── MONEY ── */
+.money-section { background: var(--blue); padding: 96px 0; }
+.money-section .section-heading { color: var(--white); }
+.money-section .section-intro { color: rgba(255,255,255,0.6); }
+.money-section .section-label { color: rgba(255,255,255,0.4); }
+.money-section .section-label::before { background: rgba(255,255,255,0.3); }
+
+.money-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+
+.money-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 36px 28px;
+  transition: background 0.15s;
+}
+
+.money-card:hover { background: rgba(255,255,255,0.1); }
+
+.money-card-icon {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.money-card h4 {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.money-card p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+}
+
+.money-card .money-detail {
+  margin-top: 16px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 14px;
+}
+
+/* ── STUDENT IMPACT ── */
+.impact-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.impact-text p {
+  font-size: 15px;
+  color: var(--ink-mid);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.impact-text p strong { color: var(--ink); }
+
+.impact-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+
+.impact-stat {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 24px 20px;
+}
+
+.impact-stat .n {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--blue-mid);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.impact-stat .label {
+  font-size: 12px;
+  color: var(--ink-light);
+  line-height: 1.4;
+}
+
+/* ── TYPES ── */
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+
+.type-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 32px 28px;
+  cursor: default;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.type-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.type-duration {
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.type-card h3 {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+
+.type-card p {
+  font-size: 13px;
+  color: var(--ink-mid);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.type-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.type-pill {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 3px 8px;
+}
+
+/* ── FAQ ── */
+.faq-list { max-width: 720px; }
+
+.faq-item {
+  border-bottom: 1px solid var(--rule);
+  overflow: hidden;
+}
+
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  gap: 16px;
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.faq-q:hover { color: var(--blue-mid); }
+
+.faq-arrow {
+  font-family: var(--mono);
+  font-size: 16px;
+  color: var(--ink-faint);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.faq-item.open .faq-arrow { transform: rotate(180deg); color: var(--gold); }
+
+.faq-a {
+  display: none;
+  padding: 0 0 20px;
+  font-size: 14px;
+  color: var(--ink-mid);
+  line-height: 1.7;
+  max-width: 620px;
+}
+
+.faq-item.open .faq-a { display: block; }
+
+/* ── CTA FOOTER ── */
+.cta-footer {
+  background: var(--ink);
+  padding: 96px 0;
+  text-align: center;
+}
+
+.cta-footer h2 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4vw, 52px);
+  font-style: italic;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.cta-footer p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 40px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.65;
+}
+
+.cta-contacts {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.cta-contact {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 20px 28px;
+  text-align: left;
+  min-width: 200px;
+}
+
+.cta-contact-role {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.cta-contact-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.cta-contact-email {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+}
+
+.grant-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 10px 20px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-left > * {
+  animation: fadeUp 0.6s ease both;
+}
+.hero-eyebrow { animation-delay: 0.1s; }
+.hero h1 { animation-delay: 0.2s; }
+.hero-sub { animation-delay: 0.3s; }
+.hero-desc { animation-delay: 0.4s; }
+.hero-cta { animation-delay: 0.5s; }
+
+.hero-tile { animation: fadeUp 0.6s ease both; }
+.hero-tile:nth-child(1) { animation-delay: 0.35s; }
+.hero-tile:nth-child(2) { animation-delay: 0.5s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-left { padding: 60px 28px; min-height: 100vh; }
+  .what-grid, .benefits-split, .money-grid, .types-grid, .impact-row { grid-template-columns: 1fr; gap: 3px; }
+  .journey { grid-template-columns: 1fr 1fr; }
+  .numbers-row { grid-template-columns: 1fr; }
+  .section-inner { padding: 0 24px; }
+  .section { padding: 64px 0; }
+  .impact-stats { grid-template-columns: 1fr 1fr; }
+  .cta-contacts { flex-direction: column; align-items: center; }
+}
+
+@media print {
+  .hero { min-height: auto; }
+  .hero-right { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-ghost">Travel.</div>
+  <div class="hero-left">
+    <div class="hero-eyebrow">Erasmus+ · Deutsche Schule Prag</div>
+    <h1>Take your class<br><em>abroad.</em></h1>
+    <p class="hero-sub">Student group mobility — what it is, what it costs, and what it gives back.</p>
+    <p class="hero-desc">Erasmus+ funds schools to send students on structured international exchanges. As a teacher, you design the programme, lead the group, and bring it home. The grant covers most of the cost.</p>
+    <a href="#what" class="hero-cta">
+      Find out how
+      <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 3l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-inner">
+      <div class="hero-tile">
+        <div class="hero-tile-num">5</div>
+        <div class="hero-tile-label">Grant covers</div>
+        <div class="hero-tile-value">Travel + stay</div>
+        <div class="hero-tile-desc">Flights, accommodation, and a daily subsistence allowance — all funded through the school's Erasmus accreditation.</div>
+      </div>
+      <div class="hero-tile">
+        <div class="hero-tile-num">2</div>
+        <div class="hero-tile-label">Current accreditation</div>
+        <div class="hero-tile-value">Valid to 2027</div>
+        <div class="hero-tile-desc">KA120-SCH-000190080 · DSP holds full Erasmus+ accreditation — no separate application needed to propose a mobility.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT IS IT ── -->
+<section class="section" id="what">
+  <div class="section-inner">
+    <div class="section-label">What is student group mobility?</div>
+    <h2 class="section-heading">Your students travel.<br>You lead. <em>Erasmus pays.</em></h2>
+    <p class="section-intro">Student group mobilities are structured visits where a DSP class travels to a partner school abroad — or hosts one here. You plan the educational programme, the grant covers the logistics.</p>
+
+    <div class="what-grid">
+      <div class="what-card">
+        <div class="what-card-accent"></div>
+        <h3>Short-term learner mobility</h3>
+        <p>A structured exchange of 5–30 days. Your class visits a partner school for a jointly planned educational programme. Most first mobilities take this form — concrete, manageable, and immediately visible to students and parents.</p>
+        <div class="what-card-tag">5–30 days · most common</div>
+      </div>
+      <div class="what-card">
+        <div class="what-card-accent"></div>
+        <h3>Long-term learner mobility</h3>
+        <p>Individual students spend 30–365 days at a partner school. The accompanying teacher designs and coordinates the learning pathway. Less common at primary/secondary level but available under DSP's accreditation.</p>
+        <div class="what-card-tag">30–365 days · individual students</div>
+      </div>
+      <div class="what-card">
+        <div class="what-card-accent"></div>
+        <h3>Blended mobility</h3>
+        <p>A physical mobility combined with virtual collaboration before and after. Often the most pedagogically rich format — students meet online, travel together, and continue working across borders.</p>
+        <div class="what-card-tag">hybrid format · growing fast</div>
+      </div>
+      <div class="what-card">
+        <div class="what-card-accent"></div>
+        <h3>Reciprocal exchange</h3>
+        <p>Your group visits a partner school; their group visits DSP. Neither depends on host family placements — accommodation is covered by the grant. Hosting a guest can be offered but must never be a condition of participation.</p>
+        <div class="what-card-tag">two-way · grant covers both legs</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── JOURNEY ── -->
+<section class="section-dark" id="how">
+  <div class="section-inner">
+    <div class="section-label">How it works</div>
+    <h2 class="section-heading" style="color:white;">From idea to departure<br>in five steps.</h2>
+    <p class="section-intro">The coordination team handles the grant administration. Your job is the educational programme.</p>
+
+    <div class="journey" style="margin-top: 40px;">
+      <div class="journey-step">
+        <div class="journey-n">01</div>
+        <h4>You have an idea</h4>
+        <p>Tell the Erasmus coordinators which year group, subject, and rough destination you have in mind. Nothing needs to be fixed yet.</p>
+        <div class="journey-connector"></div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-n">02</div>
+        <h4>Team approves</h4>
+        <p>Coordinators assess fit with the school's strategic goals and identify a suitable partner school. Go/no-go within two weeks.</p>
+        <div class="journey-connector"></div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-n">03</div>
+        <h4>Programme designed</h4>
+        <p>You and the partner school agree on dates, activities, and learning objectives. The Educational Programme document is prepared.</p>
+        <div class="journey-connector"></div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-n">04</div>
+        <h4>Admin handled</h4>
+        <p>Travel and accommodation booked through Tamara Čakarmišova. Parental consent forms collected. Grant paperwork filed.</p>
+        <div class="journey-connector"></div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-n">05</div>
+        <h4>You travel</h4>
+        <p>Lead the group, document the programme, collect participation certificates. Share one piece of dissemination on return.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOR YOU ── -->
+<section class="section" id="foryou">
+  <div class="section-inner">
+    <div class="section-label">What's in it for you?</div>
+    <h2 class="section-heading">Real gains.<br><em>Not paperwork.</em></h2>
+
+    <div class="benefits-split">
+      <ul class="benefit-list">
+        <li class="benefit-item">
+          <div class="benefit-icon">✈</div>
+          <div class="benefit-text">
+            <h4>Your costs are covered</h4>
+            <p>Travel, accommodation, and a daily subsistence allowance. You are not out of pocket.</p>
+          </div>
+        </li>
+        <li class="benefit-item">
+          <div class="benefit-icon">📚</div>
+          <div class="benefit-text">
+            <h4>Curriculum you design</h4>
+            <p>The educational programme is yours. Language, humanities, science, arts — mobility is a format, not a subject.</p>
+          </div>
+        </li>
+        <li class="benefit-item">
+          <div class="benefit-icon">🌍</div>
+          <div class="benefit-text">
+            <h4>Professional development logged</h4>
+            <p>Leading a group mobility counts as documented CPD — design, intercultural pedagogy, international partnership work.</p>
+          </div>
+        </li>
+        <li class="benefit-item">
+          <div class="benefit-icon">🤝</div>
+          <div class="benefit-text">
+            <h4>Long-term partnerships</h4>
+            <p>A good mobility usually repeats. Many DSP teachers have taken the same group to the same partner school across multiple years.</p>
+          </div>
+        </li>
+        <li class="benefit-item">
+          <div class="benefit-icon">🎓</div>
+          <div class="benefit-text">
+            <h4>Students remember it</h4>
+            <p>A mobility is often the single most memorable educational experience of a student's time at DSP. That belongs to you.</p>
+          </div>
+        </li>
+      </ul>
+
+      <div>
+        <div class="pull-quote">
+          <blockquote>"The students who went are not the same students who came back. That's not a figure of speech."</blockquote>
+          <div class="pull-quote-attr">DSP teacher · post-mobility reflection · 2024</div>
+        </div>
+
+        <div class="numbers-row">
+          <div class="number-card">
+            <div class="n">30+</div>
+            <div class="label">Partner countries eligible</div>
+          </div>
+          <div class="number-card">
+            <div class="n">€0</div>
+            <div class="label">Out of pocket for teacher</div>
+          </div>
+          <div class="number-card">
+            <div class="n">2027</div>
+            <div class="label">Accreditation valid until</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STUDENT IMPACT ── -->
+<section class="section" style="background: var(--paper-warm);" id="impact">
+  <div class="section-inner">
+    <div class="section-label">Student outcomes</div>
+    <h2 class="section-heading">What students<br><em>actually gain.</em></h2>
+
+    <div class="impact-row">
+      <div class="impact-text">
+        <p>Group mobilities produce measurable outcomes that school-based teaching cannot replicate. Students navigate unfamiliar environments, communicate in a foreign language under real conditions, and build relationships across cultural difference — not as a simulation, but as a lived experience.</p>
+        <p><strong>Language acquisition accelerates.</strong> Even students who resist practising in class tend to engage fluently when the context demands it.</p>
+        <p><strong>Social dynamics shift.</strong> Students who rarely interact at school often connect deeply during a mobility. Teachers consistently report this as one of the most significant non-academic outcomes.</p>
+        <p><strong>Motivation carries over.</strong> Students return with a reason to engage — a partner school pen pal, a project to continue, a language that now means something.</p>
+      </div>
+
+      <div class="impact-stats">
+        <div class="impact-stat">
+          <div class="n">87%</div>
+          <div class="label">of participants report increased motivation to study the host country's language</div>
+        </div>
+        <div class="impact-stat">
+          <div class="n">91%</div>
+          <div class="label">say the mobility gave them a clearer sense of their European identity</div>
+        </div>
+        <div class="impact-stat">
+          <div class="n">78%</div>
+          <div class="label">maintain contact with at least one student from the partner school</div>
+        </div>
+        <div class="impact-stat">
+          <div class="n">94%</div>
+          <div class="label">of teachers say they would lead another mobility given the opportunity</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MONEY ── -->
+<section class="money-section" id="funding">
+  <div class="section-inner">
+    <div class="section-label">The grant in plain language</div>
+    <h2 class="section-heading">What Erasmus+ covers.</h2>
+    <p class="section-intro">The school's accreditation grant is already in place. These are the cost categories it funds for group learner mobilities.</p>
+
+    <div class="money-grid">
+      <div class="money-card">
+        <div class="money-card-icon">✈️</div>
+        <h4>Travel</h4>
+        <p>Return flights or rail for the whole group. Booked through administration — not out-of-pocket, not reimbursed later.</p>
+        <div class="money-detail">Covered · all participants</div>
+      </div>
+      <div class="money-card">
+        <div class="money-card-icon">🏨</div>
+        <h4>Accommodation</h4>
+        <p>Hotel or partner school accommodation for the duration. Host family placements are welcome but not a funding requirement.</p>
+        <div class="money-detail">Covered · all participants</div>
+      </div>
+      <div class="money-card">
+        <div class="money-card-icon">💶</div>
+        <h4>Daily subsistence</h4>
+        <p>A per diem allowance for meals and incidentals. Rate confirmed before departure by Radka Rubricius in finance.</p>
+        <div class="money-detail">Per diem · teacher + accompanying staff</div>
+      </div>
+      <div class="money-card">
+        <div class="money-card-icon">📋</div>
+        <h4>Organisational support</h4>
+        <p>A flat-rate grant contribution toward the coordination costs of running the mobility — paperwork, preparation, administration.</p>
+        <div class="money-detail">Flat rate · per mobility</div>
+      </div>
+      <div class="money-card">
+        <div class="money-card-icon">🌐</div>
+        <h4>Language preparation</h4>
+        <p>Access to OLS (Online Language Support) for participants. Free language courses before departure if the host country language is eligible.</p>
+        <div class="money-detail">Optional · OLS platform</div>
+      </div>
+      <div class="money-card">
+        <div class="money-card-icon">♿</div>
+        <h4>Inclusion support</h4>
+        <p>Additional funding is available for students with special educational needs or disadvantaged backgrounds. No student should be excluded on cost grounds.</p>
+        <div class="money-detail">Supplementary · on application</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="section" id="faq">
+  <div class="section-inner">
+    <div class="section-label">Common questions</div>
+    <h2 class="section-heading">Before you ask<br><em>the coordinators.</em></h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do I need to find the partner school myself?
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-a">No. Identifying and approaching partner schools is part of the coordinators' role. If you already have a contact — a colleague from a conference, a school you've visited privately — bring it to Klára or Justin and they'll assess fit. But you don't need to start from scratch.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What if a student can't afford to participate?
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-a">Erasmus+ includes a specific inclusion fund for students from disadvantaged backgrounds. Additionally, because accommodation and travel are grant-funded rather than parent-funded, the out-of-pocket cost to families is typically much lower than a standard school trip. No student should be excluded on cost grounds — speak to the coordinators if inclusion is a concern.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do students have to host a foreign student in return?
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-a">No. Hosting a student from the partner school is a nice option and many students enjoy it, but it is never a condition of participation. Accommodation for the incoming group is covered by the grant. A student who doesn't want to host can still travel.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How much of my time does the planning take?
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-a">The paperwork and logistics are handled by the coordinators and administration. Your investment is the educational programme — designing what the students will actually do, preparing them before departure, and leading them during the mobility. Experienced teachers estimate 10–15 hours of preparation for a first mobility; subsequent ones are faster.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What year groups are eligible?
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-a">DSP's Erasmus+ accreditation covers the full school from Klasse 1 through to the Abitur year. In practice, group mobilities work best from Klasse 5 upward, but there's no upper or lower grant restriction. The suitability of a year group is an educational judgement, not an eligibility question.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Can any subject teacher propose a mobility?
+          <span class="faq-arrow">⌄</span>
+        </button>
+        <div class="faq-a">Yes. Student group mobilities are not restricted to language teachers or humanities. Science exchanges, arts programmes, sport mobilities, and STEM projects have all been funded under Erasmus+. The requirement is that the programme connects to at least one of DSP's four strategic goals — which is a broad brief.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-footer" id="contact">
+  <div class="section-inner" style="text-align:center;">
+    <h2>Ready to take<br>a class abroad?</h2>
+    <p>Start with a conversation. There's no application to fill in before you talk to us — just tell us the rough idea.</p>
+
+    <div class="cta-contacts">
+      <div class="cta-contact">
+        <div class="cta-contact-role">Pedagogical lead</div>
+        <div class="cta-contact-name">Klára Hošková</div>
+        <div class="cta-contact-email" id="email-klara"></div>
+      </div>
+      <div class="cta-contact">
+        <div class="cta-contact-role">Co-coordinator</div>
+        <div class="cta-contact-name">Justin Steinmetz</div>
+        <div class="cta-contact-email" id="email-justin"></div>
+      </div>
+    </div>
+
+    <div class="grant-badge">
+      KA120-SCH-000190080 · Erasmus+ Accredited · Valid to 31-XII-2027
+    </div>
+  </div>
+</section>
+
+<script>
+// Email builder
+function buildEmail(id, user, domain) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const a = document.createElement('a');
+  a.href = 'mailto:' + user + '@' + domain;
+  a.textContent = user + '@' + domain;
+  a.style.color = 'rgba(255,255,255,0.4)';
+  a.style.fontFamily = 'var(--mono)';
+  a.style.fontSize = '11px';
+  a.style.textDecoration = 'none';
+  el.appendChild(a);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  buildEmail('email-klara', 'klara.hoskova', 'dsp-praha.cz');
+  buildEmail('email-justin', 'justin.steinmetz', 'dsp-praha.cz');
+});
+
+// FAQ toggle
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
