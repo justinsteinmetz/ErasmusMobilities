@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Erasmus Mobilities — DSP</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root {
   --bg: #f7f5f2;
   --text: #111;
-  --muted: #6f6f6f;
+  --muted: #7a7a7a;
   --accent: #c6a75e;
   --band: #ece9e4;
 }
@@ -25,55 +25,59 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Inter', sans-serif;
-  line-height: 1.65;
 }
 
-/* MASTER LAYOUT */
-.container {
-  max-width: 1100px;
+/* MASTER WIDTH */
+.wrap {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 80px 24px;
+  padding: 80px 20px;
 }
 
-/* HERO */
+/* HERO — BREAK THE COLUMN */
 .hero {
-  max-width: 720px;
+  max-width: 900px;
 }
 
+/* LABEL (QUIETER) */
 .label {
+  font-size: 0.8rem;
   color: var(--muted);
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-transform: none;
 }
 
+/* HEADLINE — BIGGER + TIGHTER */
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(3rem, 6vw, 5rem);
-  line-height: 1.02;
-  margin: 20px 0 30px;
+  font-size: clamp(3.2rem, 6vw, 5.2rem);
+  line-height: 0.98;
+  margin: 18px 0 24px;
 }
 
 h1 em {
   display: block;
   font-style: italic;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
+/* INTRO — NARROWER FOR READABILITY */
 .intro {
-  font-size: 1.25rem;
+  max-width: 480px;
+  font-size: 1.2rem;
   color: var(--muted);
-  max-width: 520px;
+  line-height: 1.6;
 }
 
-/* GRID SECTION */
+/* GRID — OFFSET FEEL */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  margin-top: 100px;
+  gap: 80px;
+  margin-top: 120px;
 }
 
+/* BLOCKS */
 .block h2 {
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
@@ -81,26 +85,133 @@ h1 em {
 }
 
 .block p {
-  color: #2a2a2a;
+  color: #2b2b2b;
+  line-height: 1.65;
 }
 
-/* FULL-WIDTH BAND */
+/* BAND — FULL WIDTH BREAK */
 .band {
-  margin-top: 120px;
-  padding: 80px 0;
+  margin-top: 140px;
   background: var(--band);
+  padding: 90px 0;
 }
 
 .band-inner {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
 }
 
-/* QUOTE */
+/* QUOTE — MAKE IT LAND */
 .quote {
   font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  line-height: 1.25;
+}
+
+.quote span {
+  display: block;
+  margin-top: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* CTA */
+.cta-wrap {
+  margin-top: 140px;
+  max-width: 700px;
+}
+
+.cta-wrap h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 16px 26px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 80px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .wrap {
+    padding: 60px 18px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  .intro {
+    font-size: 1.05rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="label">What support you actually get</div>
+
+    <h1>
+      You are not<br>
+      carrying this
+      <em>alone.</em>
+    </h1>
+
+    <p class="intro">
+      The most common hesitation isn’t the programme — it’s what happens if something goes wrong.
+      This is what’s already in place.
+    </p>
+  </div>
+
+  <div class="grid">
+
+    <div class="block">
+      <h2>Administrative cover</h2>
+      <p>All logistics — travel, accommodation, grant documentation, parental consent — are handled centrally.</p>
+    </div>
+
+    <div class="block">
+      <h2>Clear responsibility</h2>
+      <p>The school carries institutional responsibility. Agreements and insurance frameworks are in place before departure.</p>
+    </div>
+
+    <div class="block">
+      <h2>When something goes wrong</h2>
+      <p>You escalate. The Erasmus team and school leadership step in.</p>
+    </div>
+
+    <div class="block">
+      <h2>Cover lessons</h  font-size: 1.6rem;
   line-height: 1.3;
   margin-bottom: 20px;
 }
