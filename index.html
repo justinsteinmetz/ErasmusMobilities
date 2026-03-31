@@ -1,123 +1,157 @@
-<!-- ── SUPPORT SECTION ── -->
-<section class="section support-section" id="support">
-  <div class="section-inner">
-    <div class="section-label">What support you actually get</div>
-    <h2 class="section-heading">You are not carrying this <em>alone.</em></h2>
-    <p class="section-intro" style="margin-bottom:36px;">
-      The most common hesitation isn’t the programme — it’s what happens if something goes wrong.
-      This is what’s already in place.
-    </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erasmus Mobilities — DSP</title>
 
-    <div class="support-grid">
-      <div class="support-card">
-        <div class="support-head">Administrative cover</div>
-        <p>All logistics — travel, accommodation, grant documentation, parental consent — are handled centrally. You are not managing paperwork alone.</p>
-      </div>
-      <div class="support-card">
-        <div class="support-head">Clear responsibility</div>
-        <p>The school carries institutional responsibility. Agreements and insurance frameworks are in place before departure.</p>
-      </div>
-      <div class="support-card">
-        <div class="support-head">When something goes wrong</div>
-        <p>You escalate. The Erasmus team and school leadership step in. You are not expected to resolve issues alone.</p>
-      </div>
-      <div class="support-card">
-        <div class="support-head">Cover lessons</div>
-        <p>Timetable cover is arranged by school management — not left to you to organise.</p>
-      </div>
-      <div class="support-card">
-        <div class="support-head">Parental communication</div>
-        <p>Handled centrally through structured consent and information systems.</p>
-      </div>
-      <div class="support-card">
-        <div class="support-head">After return</div>
-        <p>Reporting is supported. Your role is one simple dissemination — not bureaucracy.</p>
-      </div>
-    </div>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <!-- 🔥 SIRINA QUOTE INSERTED HERE -->
-    <blockquote class="impact-quote" style="margin-top:60px;">
-      “It takes a lot of time and energy, but it’s worth it.”
-      <span>— Sirina Agred, French teacher · Erasmus+ mobility</span>
-    </blockquote>
-
-  </div>
-</section>
-
-<!-- ── HERO (UPDATED TEXT ONLY — KEEP YOUR EXISTING STYLES) ── -->
-<section class="hero">
-  <div class="hero-left">
-
-    <div class="hero-eyebrow">Erasmus+ · Deutsche Schule Prag</div>
-
-    <h1>Take your class<br><em>abroad.</em></h1>
-
-    <p class="hero-sub">
-      Not a trip. A shift.
-    </p>
-
-    <p class="hero-desc">
-      Most teachers hesitate for one reason: what could go wrong.
-      The logistics, the responsibility, the unknowns.
-      <br><br>
-      That part is already handled.
-      What remains is the experience your students will carry for years.
-    </p>
-
-    <a href="#support" class="hero-cta">
-      Start a conversation
-    </a>
-
-  </div>
-</section>
-
-<!-- ── CTA FOOTER (UPGRADED) ── -->
-<section class="cta-footer" id="contact">
-  <div class="section-inner" style="text-align:center;">
-
-    <h2>Run one.<br>Or watch someone else do it.</h2>
-
-    <p>
-      You don’t need a full plan.
-      Just an idea worth testing.
-    </p>
-
-    <p style="font-size:14px; color:rgba(255,255,255,0.6); margin-bottom:30px;">
-      Not sure if it works? That’s exactly what the first conversation is for.
-    </p>
-
-    <div class="cta-contacts">
-      <div class="cta-contact">
-        <div class="cta-contact-role">Pedagogical lead</div>
-        <div class="cta-contact-name">Klára Hošková</div>
-        <div class="cta-contact-email" id="email-klara"></div>
-      </div>
-      <div class="cta-contact">
-        <div class="cta-contact-role">Co-coordinator</div>
-        <div class="cta-contact-name">Justin Steinmetz</div>
-        <div class="cta-contact-email" id="email-justin"></div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<script>
-function buildEmail(id, user, domain) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  const a = document.createElement('a');
-  a.href = 'mailto:' + user + '@' + domain;
-  a.textContent = user + '@' + domain;
-  a.style.color = 'rgba(255,255,255,0.4)';
-  a.style.fontFamily = 'var(--mono)';
-  a.style.fontSize = '11px';
-  a.style.textDecoration = 'none';
-  el.appendChild(a);
+<style>
+:root {
+  --bg: #f7f5f2;
+  --text: #1a1a1a;
+  --muted: #6b6b6b;
+  --accent: #c6a75e;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  buildEmail('email-klara', 'klara.hoskova', 'dsp-praha.cz');
-  buildEmail('email-justin', 'justin.steinmetz', 'dsp-praha.cz');
-});
-</script>
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-top: 50px;
+}
+
+p {
+  margin: 10px 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.quote {
+  margin-top: 40px;
+  padding-left: 20px;
+  border-left: 3px solid var(--accent);
+  font-style: italic;
+}
+
+.footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.cta {
+  margin-top: 40px;
+  display: inline-block;
+  padding: 12px 20px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <p class="muted">What support you actually get</p>
+  <h1>You are not carrying this <em>alone.</em></h1>
+
+  <p class="muted">
+    The most common hesitation isn’t the programme — it’s what happens if something goes wrong.
+    This is what’s already in place.
+  </p>
+
+  <div class="section">
+    <h2>Administrative cover</h2>
+    <p>All logistics — travel, accommodation, grant documentation, parental consent — are handled centrally. You are not managing paperwork alone.</p>
+  </div>
+
+  <div class="section">
+    <h2>Clear responsibility</h2>
+    <p>The school carries institutional responsibility. Agreements and insurance frameworks are in place before departure.</p>
+  </div>
+
+  <div class="section">
+    <h2>When something goes wrong</h2>
+    <p>You escalate. The Erasmus team and school leadership step in. You are not expected to resolve issues alone.</p>
+  </div>
+
+  <div class="section">
+    <h2>Cover lessons</h2>
+    <p>Timetable cover is arranged by school management — not left to you to organise.</p>
+  </div>
+
+  <div class="section">
+    <h2>Parental communication</h2>
+    <p>Handled centrally through structured consent and information systems.</p>
+  </div>
+
+  <div class="section">
+    <h2>After return</h2>
+    <p>Reporting is supported. Your role is one simple dissemination — not bureaucracy.</p>
+  </div>
+
+  <div class="quote">
+    “It takes a lot of time and energy, but it’s worth it.”  
+    — Sirina Agred, French teacher · Erasmus+ mobility
+  </div>
+
+  <div class="footer">
+    Erasmus+ · Deutsche Schule Prag
+  </div>
+
+  <h2>Take your class <em>abroad.</em></h2>
+
+  <p>Not a trip. A shift.</p>
+
+  <p>
+    Most teachers hesitate for one reason: what could go wrong.
+    The logistics, the responsibility, the unknowns.
+  </p>
+
+  <p>
+    That part is already handled.
+    What remains is the experience your students will carry for years.
+  </p>
+
+  <a href="#" class="cta">Start a conversation</a>
+
+</div>
+
+</body>
+</html>
